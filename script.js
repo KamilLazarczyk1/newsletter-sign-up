@@ -4,6 +4,7 @@ const inputEmail = document.querySelector("input#email");
 const divFormSubmitted = document.querySelector("div.formSubmitted");
 const main = document.querySelector("main");
 const dismissBtn = document.querySelector("div.formSubmitted button");
+const confirmationEmail = document.querySelector("b#confirmationEmail");
 
 form.addEventListener("submit", e => {
     e.preventDefault();
@@ -13,6 +14,7 @@ form.addEventListener("submit", e => {
         validationMessage.style.display = "none";
         inputEmail.className = "form-email";
 
+        confirmationEmail.innerText = inputEmail.value;
         divFormSubmitted.style.display = "flex";
         main.style.display = "none";
     }
