@@ -15,77 +15,150 @@ body
     margin: 0
     padding: 0
     background-color: $darkSlateGrey
-
-main
+main 
+    min-height: 820px
+main, div.formSubmitted
     width: 100%
     max-width: 375px
     height: 100vh
-    min-height: 800px 
     background-color: $white
     line-height: 25px
+    h3 
+        font-size: 40px
+        line-height: 40px
+    h3, input#submitBtn, button
+        font-weight: 700
+    input#submitBtn, button
+        background-color: $darkSlateGrey
+        color: $white
+        font-size: 14px
+        border-style: none
+    input#submitBtn:hover, button:hover
+        background: linear-gradient(90deg, rgba(250,7,7,1) 16%, rgba(252,176,69,1) 100%)
+        box-shadow: 0px 6px 33px -8px rgba(255,46,0,0.76)
+        -webkit-box-shadow: 0px 6px 33px -8px rgba(255,46,0,0.76)
+        -moz-box-shadow: 0px 6px 33px -8px rgba(255,46,0,0.76)
+    input[type=email].form-email, input#submitBtn, button
+        width: 100%
+        height: 55px
+        border-radius: 8px
+    input[type=text].form-email:hover, input#submitBtn:hover, button:hover
+        cursor: pointer
+main
     picture
         img
             width: 100%
-    div 
+    div.mainText 
         padding: 15px 20px
         h3
             margin:
                 top:20px
                 bottom: 30px 
-            font:
-                weight: 700
-                size: 40px
         ul 
-            padding-left: 30px
-            list-style:
-                image: url("./assets/images/icon-list.svg")
+            padding-left: 0px
+            li
+                background: url('./assets/images/icon-list.svg') no-repeat left top
+                padding: 0px 0px 0px 40px
+                list-style: none
+                margin-bottom: 10px
             margin-bottom: 30px
-    label
-        font:
-            weight: 700
-            size:13px
-    input[type=email], button
-        width: 100%
-        height: 55px
-        border-radius: 8px
-    input[type=email]
-        margin:
-            bottom: 25px
-            top: 5px
-        padding: 15px
-        font:
-            size: 15px
-        border: solid $grey 1px
-    input[type=email]::placeholder, input[type=email]:-ms-input-placeholder, input[type=email]::-ms-input-placeholder
-        color: $grey
+        form
+            div
+                display: flex
+                flex-flow: row
+                margin: 0
+                padding: 0
+                width: 100%
+                justify-content: space-between
+                width: 100%
+                height: 13px
+                p.form-validation
+                    display: none
+                    color: $tomato
+                    padding: 0
+                    margin: 0
+                    font:
+                        weight: 700
+                        size:13px
+                label
+                    font:
+                        weight: 700
+                        size:13px
+            input[type=email].form-email
+                margin:
+                    bottom: 25px
+                    top: 15px
+                padding: 15px
+                font:
+                    size: 15px
+                border: solid $grey 1px
+            input[type=email].form-email::placeholder, input[type=email].form-email:-ms-input-placeholder, input[type=email].form-email::-ms-input-placeholder
+                color: $grey
+            input[type=email].wrong-email
+                background-color: hsl(4, 100%, 92%)
+                color: $tomato
+                border-color: $tomato
+div.formSubmitted
+    min-height: 600px
+    display: none
+    flex-direction: column
+    padding: 20px 
+    div
+        margin-top: 120px
     button
-        background-color: $darkSlateGrey
-        color: $white
-        font:
-            weight: 700
-            size: 14px
-        border-style: none
-
+        margin-top: auto 
 @media screen and (min-width: 900px) 
     main
-        
-        padding: 25px
+        padding:
+            left: 60px
+            top: 20px
+            right: 20px
+            bottom: 20px
         border-radius: 30px
         align-self: center
+        min-height: 500px
         height: 100%
-        max-width: none
-        width: 1000px
+        max-width: 900px
         picture
             float: right
             height: 100%    
             img
                 height: 100%    
+        div.mainText
+            width: 50%
+            margin-top: 60px
+            p
+                margin-bottom: 25px
+            h3
+                font-size: 55px
+                margin-bottom: 40px
+            ul
+                margin-bottom: 45px
+                li
+                    margin: 10px 0
+    div.formSubmitted
+        align-self: center
+        min-width: 470px
+        min-height: 0
+        height: 500px
+        border-radius: 30px
+        padding:
+            left: 50px
+            top: 50px
+            right: 50px
+            bottom: 50px
         div
-            width: 60%
+            margin-top: 0
+            h3
+                margin:
+                    top: 30px
+                    bottom: 30px
+                font-size: 45px
+                line-height: 45px            
 .attribution
     font-size: 11px
     text-align: center 
     position: fixed
     bottom: 0
 a 
-        color: hsl(228, 45%, 44%)
+    color: hsl(228, 45%, 44%)
